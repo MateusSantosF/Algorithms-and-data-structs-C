@@ -26,7 +26,7 @@ int getSize(LIST* l){
     return l->size;
 }
 
-void  showList(LIST* l){
+void showList(LIST* l){
 
  
     printf("List: \n");
@@ -37,7 +37,7 @@ void  showList(LIST* l){
 
     printf("\n");
 }
-int shareSentinel(LIST *l, KEY key){
+int searchSentinel(LIST *l, KEY key){
 
     int i = 0;
     l->a[l->size].key = key;
@@ -49,7 +49,7 @@ int shareSentinel(LIST *l, KEY key){
     return i == l->size ? -1 : i;
     
 }
-int shareElement(LIST* l,  KEY key){
+int searchElement(LIST* l,  KEY key){
 
     int i = 0;
     while( i < l->size){
@@ -92,8 +92,7 @@ void restartList(LIST* l){
 
 int deleteElement(LIST* l, KEY key){
 
-    int index = shareElement(l,key);
-    printf("Index => %d", index);
+    int index = searchElement(l,key);
 
     if(index > -1){
         int i;
@@ -162,14 +161,14 @@ int main(){
 
     initList(&l);
 
-    //printf("Size=%d\n", getSize(&l));
-    //printf("%d\n", insertElement(&l, 0, r));
-    //printf("%d\n", insertElement(&l, 1, r));
-    //printf("%d\n", insertElement(&l, 2, r));
-    //printf("%d\n", insertElement(&l, 3, r2));
-    //printf("%d\n", deleteElement(&l,6));
+    printf("Size=%d\n", getSize(&l));
+    printf("%d\n", insertElement(&l, 0, r));
+    printf("%d\n", insertElement(&l, 1, r));
+    printf("%d\n", insertElement(&l, 2, r));
+    printf("%d\n", insertElement(&l, 3, r2));
+    printf("%d\n", deleteElement(&l,6));
 
-    //printf(" Share sentinel => %d\n", shareSentinel(&l, 2));
+    printf(" Search sentinel => %d\n", searchSentinel(&l, 2));
 
     //===== INSERTION SHORT =============
     insertionShort(&l, r);

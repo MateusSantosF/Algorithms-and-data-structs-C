@@ -30,8 +30,8 @@ void push(StackStatic* stack, TYPE value){
     Item item;
     item.key = value;
 
-    stack->a[stack->size++] = item;
-    
+    stack->a[++stack->size] = item;
+
 }
 
 int length(Item* item){
@@ -40,11 +40,20 @@ int length(Item* item){
 
 Item pop(StackStatic* stack){
 
+
     return stack->a[--stack->size];
 }
 
 bool isEmpty(StackStatic* stack){
     return stack->size < 0 ? TRUE : FALSE;
+}
+
+int size(StackStatic* stack){
+    return stack->size + 1;
+}
+
+Item peek(StackStatic* stack){
+    return stack->a[stack->size];
 }
 
 int main(){
@@ -54,23 +63,29 @@ int main(){
     StackStatic stack;
     initStack(&stack);
 
+    push(&stack, 1);
+    printf("Push 1\n");
     push(&stack, 2);
-    printf("size=> %d\n", stack.size );
+    printf("Push 2\n");
     push(&stack, 3);
-    push(&stack, 3);
-    push(&stack, 3);
-    push(&stack, 3);
-    push(&stack, 3);
-    push(&stack, 3);
-
-    printf("size=> %d\n", stack.size );
-
-    printf("%d\n", pop(&stack).key);
-    printf("IsEmpty? %d\n", isEmpty(&stack));
-    printf("%d\n", pop(&stack).key);
-    printf("IsEmpty? %d\n", isEmpty(&stack));
+    printf("Push 3\n");
+    push(&stack, 4);
+    printf("Push 4\n");
     push(&stack, 5);
-    printf("%d\n", pop(&stack).key);
+    printf("Push 5\n");
+
+    printf("Size => %d\n", size(&stack));
+
+    printf("Pop => %d\n", pop(&stack).key);
+    printf("size=> %d\n", size(&stack));
+
+    printf("IsEmpty? %d\n", isEmpty(&stack));
+    printf("Pop => %d\n", pop(&stack).key);
+    printf("size=> %d\n", size(&stack));
+    printf("IsEmpty? %d\n", isEmpty(&stack));
+    printf("Pop => %d\n", pop(&stack).key);
+    printf("Stack Size=> %d\n", size(&stack));
+    printf("Peek() => %d", peek(&stack).key);
 
     // ==========================
 

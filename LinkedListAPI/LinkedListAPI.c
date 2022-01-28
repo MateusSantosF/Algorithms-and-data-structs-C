@@ -149,10 +149,8 @@ void insertEnd(LinkedList *list, int value)
             nextNode->next = newNode;
             break;
         }
-        else
-        {
-            nextNode = nextNode->next;
-        }
+        nextNode = nextNode->next;
+       
     }
     list->size++;
 }

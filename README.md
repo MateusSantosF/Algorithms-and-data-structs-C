@@ -17,7 +17,7 @@ Este é o repositório das API's desenvolvidas durante meus estudos de Estrutura
 </div>
 <h5>Não Lineares</h5>
 - [x] PriorityQueue <br>
-- [ ] Symbol Table <br>
+- [x] Symbol Table <br>
 - [ ] Binary Search Trees <br>
 - [ ] Coming soon...
 

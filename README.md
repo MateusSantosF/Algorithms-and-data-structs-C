@@ -2,7 +2,7 @@
 
 Este é o repositório das API's desenvolvidas durante meus estudos de Estrutura de Dados.
 
-- [Minhas Anotações](https://torch-piranha-da2.notion.site/Estrutura-de-Dados-e-Algoritmos-f61ee8dd4988486292d33e2e78811fa5)
+- [Minhas Anotações](https://mateussantosf.notion.site/Estrutura-de-Dados-e-Algoritmos-f61ee8dd4988486292d33e2e78811fa5)
 
 </div>
 
